@@ -206,7 +206,7 @@ export function MonasteryDetail({ monasteryId, onNavigate }: MonasteryDetailProp
               <CardTitle>Sacred Stories & Legends</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="bg-amber-50 p-6 rounded-lg mb-4">
+              <div className="bg-amber-50 p-6 rounded-lg mb-6">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
                     🧘‍♂️
@@ -225,15 +225,56 @@ export function MonasteryDetail({ monasteryId, onNavigate }: MonasteryDetailProp
                   {isPlayingAudio ? '🔊 Playing...' : '🎧 Listen to Sacred Story'}
                 </Button>
               </div>
-              
+
               {isPlayingAudio && (
-                <div className="bg-blue-50 p-4 rounded-lg">
+                <div className="bg-blue-50 p-4 rounded-lg mb-6">
                   <p className="text-sm text-blue-800">
                     🎵 "Om Mani Padme Hum... Welcome, dear visitor, to our sacred home. 
                     Let me tell you the story of how this monastery came to be..."
                   </p>
                 </div>
               )}
+
+              {/* ✅ RELIABLE YOUTUBE SHORTS SOLUTION — NO EMBEDDING ISSUES */}
+              <div className="mb-6">
+                <h4 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                  <span>🎥</span> A Glimpse Inside Rumtek Monastery
+                </h4>
+                
+                {/* Thumbnail Preview */}
+                <div className="relative aspect-[9/16] rounded-lg overflow-hidden shadow-md mb-4">
+                  <img
+                    src="https://i.ytimg.com/vi/EwRQkmEXhS4/hqdefault.jpg"
+                    alt="Rumtek Monastery Short Video Thumbnail"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-red-600 text-2xl font-bold">
+                      ▶
+                    </div>
+                  </div>
+                </div>
+
+                {/* Link Button */}
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full"
+                >
+                  <a
+                    href="https://youtube.com/shorts/EwRQkmEXhS4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2"
+                  >
+                    <span>🎥 Watch on YouTube</span>
+                  </a>
+                </Button>
+
+                <p className="text-sm text-muted-foreground mt-2">
+                  A short visual journey through Rumtek Monastery — captured in a single take by a visiting monk.
+                </p>
+              </div>
             </CardContent>
           </Card>
         </TabsContent>
